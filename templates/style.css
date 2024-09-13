@@ -1,0 +1,38 @@
+div{
+    background: #00BFFF;
+}
+
+body{
+    background-image: url("https://wareteka.pl/wp-content/uploads/2021/11/1.jpeg");
+
+}
+
+td, th, table{
+    border: 0.5px solid black ;
+}
+div {
+    padding: 0px 20px;
+    margin: 50px;
+}
+.heading {
+    color: green;
+    font-size: 24px;
+}
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+.container div{
+  margin: 10px;
+  padding: 20px;
+  font-size: 20px;
+}
+.account {
+  display: flex;
+  justify-content: space-between;
+}
+.account div{
+  margin: 10px;
+  padding: 20px;
+  font-size: 20px;
+}
