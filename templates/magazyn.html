@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona głowna</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div align="center">
+        <h1>Program księgowo magazynowy 0.1</h1>
+    </div>
+    <div>
+        <h1>Witaj ponownie w programie do zarządzania magazynem oraz ksiegowością</h1>
+
+    </div>
+    <div class="account">
+        <div>
+        <p class="heading">Aktulany stan magazynu:  </p>
+                <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Przedmiot</th>
+              <th scope="col">Cena</th>
+              <th scope="col">Ilość</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in manager %}
+                <tr>
+                    <td>{{ product.przedmiot }}</td>
+                    <td>{{ product.cena }}</td>
+                    <td>{{ product.ilosc }}</td>
+                </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+        </div>
+        <div>
+        <p>Aktualny stan konta: {{ saldo }}</p>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <form method="POST">
+            <p class="heading">Zakup produktu na magazyn</p>
+            <p>Podaj szczegóły zakupionego produktu:</p>
+            <table class="table">
+                <input type="hidden" name="form_type" value="buy">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nazwa</th>
+                      <th scope="col">Ilość</th>
+                      <th scope="col">Cena</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text" class="form-control" name="buy_product"/></td>
+                      <td><input type="number" class="form-control" name="buy_quantity"/></td>
+                      <td><input type="number" class="form-control" name="buy_price"/></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="submit">Submit</button>
+            </form>
+            </br>
+        </div>
+        <div>
+            <form method="POST">
+            <p class="heading">Sprzedaż produktu z magazynu</p>
+            <p>Podaj szczegóły sprzedanego produktu:</p>
+            <table class="table">
+                <input type="hidden" name="form_type" value="sale">
+                <label class="form-label">Przedmiot</label>
+                  <thead>
+                    <tr>
+                      <th scope="col">Nazwa</th>
+                      <th scope="col">Ilość</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text" name="product"/></td>
+                      <td><input type="number" name="quantity"/></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="submit">Submit</button>
+            </form>
+            </br>
+        </div>
+        <div>
+            <form   method="POST">
+                <p class="heading">Zmiana salda</p>
+                <p>Podaj szczegóły operacji</p>
+                <table class="table">
+                    <input type="hidden" name="form_type" value="change_saldo">
+                      <thead>
+                        <tr>
+                          <th scope="col">Kwota zmiany salda</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><input type="number" name="kwota"/></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
