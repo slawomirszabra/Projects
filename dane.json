@@ -1,0 +1,40 @@
+{
+   "magazyn": [
+      {
+         "przedmiot": "tablet",
+         "cena": 1000,
+         "ilosc": 4
+      },
+      {
+         "przedmiot": "monitor",
+         "cena": 600,
+         "ilosc": 1
+      },
+      {
+         "przedmiot": "klawiatura",
+         "cena": 100,
+         "ilosc": 23
+      },
+      {
+         "przedmiot": "myszka",
+         "cena": 50,
+         "ilosc": 5
+      },
+      {
+         "przedmiot": "PS5",
+         "cena": 1800,
+         "ilosc": 2
+      },
+      {
+         "przedmiot": "sluchawki",
+         "cena": 850,
+         "ilosc": 1
+      },
+      {
+         "przedmiot": "telefon",
+         "cena": 3999,
+         "ilosc": 5
+      }
+   ],
+   "saldo": 14504.0
+}
